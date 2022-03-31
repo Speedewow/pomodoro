@@ -1,0 +1,238 @@
+.root {
+    background-color: white;
+    max-width: 412px;
+    height: 100vh;
+    max-height: 915px;
+    position: relative;
+    outline: 1px solid rgb(204, 79, 51);
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-container {
+    height: 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(204, 79, 51);
+    outline: rgb(204, 79, 51);
+    border-radius: 15px 15px 0 0
+}
+
+.nav-title-container {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-title {
+    margin: 0;
+    padding: 4px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.logo {
+    width: 25px;
+    transition: 1s;
+}
+
+.logo:hover {
+    width: 30px;
+}
+
+.icon {
+    width: 24px;
+}
+
+.title {
+    margin: 55px 0;
+    padding: 0;
+    color: rgb(204, 79, 51);
+}
+
+.timer {
+    color: #fff;
+    background-color: rgb(204, 79, 51);
+    outline: rgb(204, 79, 51);
+    border-radius: 15px;
+    font-size: 75px;
+    padding: 5px 30px;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.pause {
+    margin: 0 auto;
+}
+
+.button-container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    height: 22%;
+}
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 95px;
+    border: none;
+    border-radius: 3px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(204, 79, 51);
+    outline: rgb(204, 79, 51);
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    transition: 0.5s;
+}
+
+.button:hover {
+    outline: 1px solid white;
+    width: 110px;
+    height: 45px;
+}
+
+.reset-btn {
+    background-color: white;
+    color: rgb(204, 79, 51);
+}
+
+.reset-btn:hover {
+    outline: 1px solid rgb(204, 79, 51);
+    width: 110px;
+    height: 45px;
+}
+
+.number-input {
+    position: relative;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, .7);
+    width: 60px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.number-input:hover {
+    width: 100px;
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.next {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.number-input:hover .next {
+    opacity: 1;
+}
+
+.prev {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(315deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.number-input:hover .prev {
+    opacity: 1;
+}
+
+.number {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 1.35;
+    font-size: 30px;
+    font-weight: 700;
+    user-select: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.inputs-container {
+    background-color: rgb(204, 79, 51);
+    border-top: 1px solid rgb(204, 79, 51);
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    height: 18%;
+}
+
+.session-input-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.break-input-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-title {
+    margin: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+}
