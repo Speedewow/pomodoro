@@ -1,10 +1,15 @@
+.root {
+    height: 100vh;
+    max-height: 915px;
+    margin: 0 auto;
+}
+
 .main {
     box-sizing: border-box;
     background-color: #fff;
     max-width: 412px;
     width: 100%;
-    height: 100vh;
-    max-height: 915px;
+    height: 100%;
     position: relative;
     outline: 1px solid rgb(213, 210, 210);
     margin: 0 auto;
@@ -14,6 +19,7 @@
     color: rgb(204, 79, 51);
     user-select: none;
     transition: 1s;
+    overflow: hidden;
 }
 
 .main-colored {
@@ -123,6 +129,7 @@
 .title {
     margin: 0 auto;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 .time {
@@ -149,6 +156,7 @@
     width: 50%;
     text-align: center;
     transition: 1s;
+    z-index: 2;
 }
 
 .timer-colored {
@@ -161,6 +169,7 @@
     visibility: hidden;
     opacity: 0;
     transition: 1s;
+    z-index: 2;
 }
 
 .pause-visible {
@@ -202,6 +211,7 @@
     appearance: none;
     touch-action: manipulation;
     transition: 0.5s;
+    z-index: 2;
 }
 
 .button:hover {
@@ -213,12 +223,24 @@
 .reset-btn {
     background-color: white;
     color: rgb(204, 79, 51);
+    pointer-events: none;
+    opacity: .8;
 }
 
 .reset-btn:hover {
     outline: 1px solid rgb(204, 79, 51);
     width: 110px;
     height: 45px;
+}
+
+.reset-btn-pointer {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.start-btn-pointer {
+    pointer-events: none;
+    opacity: .8;
 }
 
 
@@ -236,7 +258,6 @@
     height: 18%;
     transform: translateY(0);
     transition: 1s;
-    visibility: visible;
 }
 
 .inputs-container-colored {
@@ -345,4 +366,43 @@
     line-height: 1.35;
     font-size: 30px;
     font-weight: 700;
+}
+
+
+/* ANIMATION */
+
+.tomatos {
+    position: fixed;
+    max-width: 412px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.tomatos-start {
+    --animation-name: tomatoRain;
+}
+
+.tomato {
+    position: relative;
+    top: -2.5em;
+    animation-name: var(--animation-name);
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+@keyframes tomatoRain {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(100vh + 1.5em));
+    }
 }

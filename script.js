@@ -13,14 +13,17 @@ const timerColored = document.querySelector(".timer");
 const navContainer = document.querySelector(".nav-container");
 const icons = navContainer.querySelectorAll(".icon");
 const main = document.querySelector(".main");
-
+const startBtn = document.querySelector(".start-btn");
+const resetBtn = document.querySelector(".reset-btn");
+const tomatos = document.querySelector('.tomatos');
+const tomato = document.querySelectorAll('.tomato');
 let pause = false;
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("info"))
         popUp.classList.toggle("popup-opened");
     if (event.target.classList.contains("color"))
-        colored()
+        colored();
     if (event.target.classList.contains("session-next"))
         sessionNext();
     if (event.target.classList.contains("session-prev"))
@@ -30,22 +33,15 @@ document.addEventListener("click", (event) => {
     if (event.target.classList.contains("break-prev"))
         breakPrev();
     if (event.target.classList.contains("start-btn"))
-        document.querySelector(".start-btn").disabled = true,
-        navContainer.classList.add("nav-container-visible"),
-        inputsContainer.classList.add("inputs-container-visible"),
-        timer(),
-        pauseBtn.addEventListener("click", () => {
-            if (!pause) {
-                pause = true;
-            } else {
-                pause = false;
-            }
-        }),
-        document.querySelector(".start-btn").disabled = true,
-        pauseBtn.classList.add("pause-visible");
+        start();
     if (event.target.classList.contains("reset-btn"))
         reset();
-
+    if (event.target.classList.contains("pause"))
+        if (!pause) {
+            pause = true;
+        } else {
+            pause = false;
+        };
 });
 
 // Arrows
@@ -90,6 +86,7 @@ function timer() {
             sessionInputNumber--;
             if (sessionInputNumber === 0)
                 clearInterval(sessionInterval),
+                sound(),
                 time.innerHTML = `${"00"}:${"00"}`,
                 breakInterval = setInterval(function breakTimer() {
                     if (!pause) {
@@ -104,17 +101,45 @@ function timer() {
                         breakInputNumber--;
                         if (breakInputNumber === 0)
                             clearInterval(breakInterval),
+                            sound(),
                             reset(),
                             time.innerHTML = `${"00"}:${"00"}`;
-                    }
-                }, 10);
-        }
-    }, 10);
+                    };
+                }, 1000);
+        };
+    }, 1000);
+};
+
+
+//sound
+
+function sound() {
+    const audio = new Audio();
+    audio.preload = "auto";
+    audio.src = "./finish.mp3";
+    audio.play();
+}
+
+//start
+
+function start() {
+    tomatos.classList.add("tomatos-start");
+    timer();
+    document.querySelector(".start-btn").disabled = true;
+    navContainer.classList.add("nav-container-visible");
+    inputsContainer.classList.add("inputs-container-visible");
+    pauseBtn.classList.add("pause-visible");
+    resetBtn.classList.add("reset-btn-pointer");
+    startBtn.classList.add("start-btn-pointer");
 };
 
 //reset
 
 function reset() {
+    pause = false;
+    tomatos.classList.remove("tomatos-start");
+    resetBtn.classList.remove("reset-btn-pointer");
+    startBtn.classList.remove("start-btn-pointer");
     inputsContainer.classList.remove("inputs-container-visible");
     navContainer.classList.remove("nav-container-visible");
     title.textContent = "session";
@@ -123,8 +148,7 @@ function reset() {
     clearInterval(sessionInterval);
     time.innerHTML = `${sessionInput.textContent}:${"00"}`;
     clearInterval(breakInterval);
-    let pause = false;
-}
+};
 
 //colored
 
@@ -145,4 +169,20 @@ function colored() {
     timerColored.classList.toggle("timer-colored");
     navContainer.classList.toggle("nav-container-colored");
     main.classList.toggle("main-colored");
-}
+};
+
+//animation
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+};
+
+function getRndFloat(min, max) {
+    return (Math.random() * (max - min) + min).toFixed(1)
+};
+
+tomato.forEach(tomatoRain => {
+    tomatoRain.style.width = getRndFloat(12, 24) + 'px';
+    tomatoRain.style.animationDuration = getRndInteger(10, 20) + 's';
+    tomatoRain.style.animationDelay = getRndInteger(-1, tomato.length / 1) + 's';
+});
