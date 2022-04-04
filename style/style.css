@@ -170,11 +170,20 @@
     opacity: 0;
     transition: 1s;
     z-index: 2;
+    cursor: pointer;
+}
+
+.pause:hover {
+    opacity: 1;
 }
 
 .pause-visible {
-    opacity: 1;
+    opacity: .7;
     visibility: visible;
+}
+
+.pause-active {
+    opacity: 1;
 }
 
 

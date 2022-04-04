@@ -37,11 +37,7 @@ document.addEventListener("click", (event) => {
     if (event.target.classList.contains("reset-btn"))
         reset();
     if (event.target.classList.contains("pause"))
-        if (!pause) {
-            pause = true;
-        } else {
-            pause = false;
-        };
+        paused();
 });
 
 // Arrows
@@ -116,7 +112,7 @@ function timer() {
 function sound() {
     const audio = new Audio();
     audio.preload = "auto";
-    audio.src = "./finish.mp3";
+    audio.src = "./content/finish.mp3";
     audio.play();
 }
 
@@ -150,6 +146,18 @@ function reset() {
     clearInterval(breakInterval);
 };
 
+
+//pause
+
+function paused() {
+    pauseBtn.classList.toggle("pause-active");
+    if (!pause) {
+        pause = true;
+    } else {
+        pause = false;
+    };
+
+}
 //colored
 
 function colored() {
