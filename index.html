@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="./content/tomato.svg">
+    <title>Pomodoro</title>
+</head>
+
+<body class="root">
+    <div class="main">
+        <div class="popup">
+            <p class="popup-text">uses a timer to break work into intervals, typically 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university
+                student.
+            </p>
+        </div>
+        <nav class="nav-container">
+            <svg class="icon info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="21px" height="21px"><path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z"/></svg>
+            <div class="nav-title-container">
+                <p class="nav-title">pomodoro</p>
+                <img src="./content/main.png" alt="logo" class="logo">
+                <p class="nav-title">technique</p>
+            </div>
+            <svg class="icon color" fill="rgb(204, 79, 51)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="21px" height="21px"><path d="M 11 0 L 11 3 L 13 3 L 13 0 L 11 0 z M 4.2226562 2.8085938 L 2.8085938 4.2226562 L 4.9296875 6.34375 L 6.34375 4.9296875 L 4.2226562 2.8085938 z M 19.777344 2.8085938 L 17.65625 4.9296875 L 19.070312 6.34375 L 21.191406 4.2226562 L 19.777344 2.8085938 z M 12 5 C 8.1456661 5 5 8.1456661 5 12 C 5 14.767788 6.6561188 17.102239 9 18.234375 L 9 21 C 9 22.093063 9.9069372 23 11 23 L 13 23 C 14.093063 23 15 22.093063 15 21 L 15 18.234375 C 17.343881 17.102239 19 14.767788 19 12 C 19 8.1456661 15.854334 5 12 5 z M 12 7 C 14.773666 7 17 9.2263339 17 12 C 17 14.184344 15.605334 16.022854 13.666016 16.708984 L 13 16.943359 L 13 21 L 11 21 L 11 16.943359 L 10.333984 16.708984 C 8.3946664 16.022854 7 14.184344 7 12 C 7 9.2263339 9.2263339 7 12 7 z M 0 11 L 0 13 L 3 13 L 3 11 L 0 11 z M 21 11 L 21 13 L 24 13 L 24 11 L 21 11 z M 4.9296875 17.65625 L 2.8085938 19.777344 L 4.2226562 21.191406 L 6.34375 19.070312 L 4.9296875 17.65625 z M 19.070312 17.65625 L 17.65625 19.070312 L 19.777344 21.191406 L 21.191406 19.777344 L 19.070312 17.65625 z"/></svg>
+        </nav>
+        <div class="timer-container">
+            <h1 class="title">SESSION</h1>
+            <div class="timer">
+                <p class="time">25:00</p>
+            </div>
+            <img src="./content/pause.png" alt="pause" class="pause">
+        </div>
+        <div class="button-container">
+            <button class="start-btn button">Start</button>
+            <button class="reset-btn button">Reset</button>
+        </div>
+        <div class="inputs-container">
+            <div class="input-container">
+                <h2 class="input-title">session</h2>
+                <div class="number-input">
+                    <span class="prev session-prev"></span>
+                    <span class="next session-next"></span>
+                    <span class="number session-input">25</span>
+
+                </div>
+            </div>
+            <div class="input-container">
+                <h2 class="input-title ">break</h2>
+                <div class="number-input">
+                    <span class="prev break-prev"></span>
+                    <span class="next break-next"></span>
+                    <span class="number break-input">5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="tomatos">
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+        <div class="tomato"><img src="./content/tomato.svg"></div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
